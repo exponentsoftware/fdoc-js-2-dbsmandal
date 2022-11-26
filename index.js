@@ -1,95 +1,117 @@
 const countries = [
-    'ALBANIA',
-    'BOLIVIA',
-    'CANADA',
-    'DENMARK',
-    'ETHIOPIA',
-    'FINLAND',
-    'GERMANY',
-    'HUNGARY',
-    'IRELAND',
-    'JAPAN',
-    'KENYA'
+	'ALBANIA',
+	'BOLIVIA',
+	'CANADA',
+	'DENMARK',
+	'ETHIOPIA',
+	'FINLAND',
+	'GERMANY',
+	'HUNGARY',
+	'IRELAND',
+	'JAPAN',
+	'KENYA'
 ]
 
 
 const createArrayOfArrays = (countries) => {
-    // console.log("rest", countries)
-    let finalArray = []
-    for (var i = 0; i < countries.length; i++) {
-        var myArray = countries[i][0]+countries[i].substring(1).toLowerCase();
-        var firstThreeLetter=countries[i][0]+countries[i][1]+countries[i][2];
-        var contryLength=countries[i].length
-        var subArray=[].concat(myArray,firstThreeLetter,contryLength)
-        // var array = mainArray
-        // console.log("Capitalize", myArray,firstThreeLetter,contryLength)
-        // console.log("mainArray", mainArray)
-        console.log("arrayyyyyyyyyyy", subArray)
-    }
-    return subArray
+	// console.log("rest", countries)
+	let finalArray = []
+	for (var i = 0; i < countries.length; i++) {
+		var myArray = countries[i][0] + countries[i].substring(1).toLowerCase();
+		var firstThreeLetter = countries[i][0] + countries[i][1] + countries[i][2];
+		var contryLength = countries[i].length
+		var subArray = [].concat(myArray, firstThreeLetter, contryLength)
+		// var array = mainArray
+		// console.log("Capitalize", myArray,firstThreeLetter,contryLength)
+		// console.log("mainArray", mainArray)
+		console.log("arrayyyyyyyyyyy", subArray)
+	}
+	return subArray
 }
 console.log("lastaaaaaaaa", createArrayOfArrays(countries))
 
 const users = [
 	{
-		name:'Brook', 
-		scores:75,
-		skills:['HTM', 'CSS', 'JS'],
-		age:16
+		name: 'Brook',
+		scores: 75,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 16
 	},
 	{
-		name:'Alex', 
-		scores:80,
-		skills:['HTM', 'CSS', 'JS'],
-		age:18
-	}, 
-	{
-		name:'David', 
-		scores:75,
-		skills:['HTM', 'CSS'],
-		age:22
-	}, 
-	{
-		name:'John', 
-		scores:85,
-		skills:['HTM'],
-		age:25
+		name: 'Alex',
+		scores: 80,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 18
 	},
 	{
-		name:'Sara',
-		scores:95,
-		skills:['HTM', 'CSS', 'JS'],
+		name: 'David',
+		scores: 75,
+		skills: ['HTM', 'CSS'],
+		age: 22
+	},
+	{
+		name: 'John',
+		scores: 85,
+		skills: ['HTM'],
+		age: 25
+	},
+	{
+		name: 'Sara',
+		scores: 95,
+		skills: ['HTM', 'CSS', 'JS'],
 		age: 26
 	},
 	{
-		name:'Martha', 
-		scores:80,
-		skills:['HTM', 'CSS', 'JS'],
-		age:18
+		name: 'Martha',
+		scores: 80,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 18
 	},
 	{
-		name:'Thomas',
-		scores:90,
-		skills:['HTM', 'CSS', 'JS'],
-		age:20
+		name: 'Thomas',
+		scores: 90,
+		skills: ['HTM', 'CSS', 'JS'],
+		age: 20
 	}
-	];
+];
 
-const scoresGreaterThan85=(users)=>{
+const scoresGreaterThan85 = (users) => {
 
-  var isScores85=users.filter((el)=>{
-        return el.scores>=85 //el.target is target users
-    })
-return isScores85
+	var isScores85 = users.filter((el) => {
+		return el.scores >= 85 //el.target is target users
+	})
+	return isScores85
 }
 
-console.log("scoresGreaterThan85",scoresGreaterThan85(users))
+console.log("scoresGreaterThan85", scoresGreaterThan85(users))
 
-function scoresGreaterThan85Normal(users){
-    let isScores85=users.filter(function(el){
-        return el.scores>=85
-    })
-return isScores85
+function scoresGreaterThan85Normal(users) {
+	let isScores85 = users.filter(function (el) {
+		return el.scores >= 85
+	})
+	return isScores85
 }
 
-console.log("scoresGreaterThan85 normal ",scoresGreaterThan85Normal(users))
+console.log("scoresGreaterThan85 normal ", scoresGreaterThan85Normal(users))
+
+const obj1 = {
+	name: 'Dipak', scores: 90,
+	skills: ['HTM', 'CSS', 'JS'],
+	age: 25
+};
+
+const addUser = (users, obj1) => {
+	const arr = [];
+	arr.push(obj1)
+	let newArray = users.concat(arr)
+	return newArray
+}
+console.log("newuser new  list", addUser(users, obj1))
+let obj2 = {
+	name: 'Goutam',
+	scores: 90,
+	skills: ['HTM', 'CSS', 'JS'],
+	age: 20
+}
+
+console.log("newuser second  list", addUser(users, obj2))
